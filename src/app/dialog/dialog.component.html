@@ -1,0 +1,68 @@
+<h1 mat-dialog-title>Fill this Requirement of Your Choice</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="productForm">
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Customer Name</mat-label>
+            <input formControlName="customerName" matInput placeholder="Name of the Person">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Contact Number</mat-label>
+            <input formControlName="contactNumber" matInput type="number" placeholder="Enter your phone no."/>
+        </mat-form-field>
+       
+        <mat-form-field appearance="outline">
+            <mat-label>Table Number</mat-label>
+            <mat-select formControlName="tableNumber" placeholder="Select the Table no.">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+            <mat-option value="5">5</mat-option>
+            <mat-option value="6">6</mat-option>
+            <mat-option value="7">7</mat-option>
+            <mat-option value="8">8</mat-option>
+        </mat-select>
+        </mat-form-field>
+    
+        <mat-radio-group formControlName="kind" class="example-radio-group">
+        <mat-radio-button class="example-radio-button" *ngFor="let fresh of freshnessList" [value]="fresh">
+            {{fresh}}    
+        </mat-radio-button>
+        </mat-radio-group>
+    
+        <mat-form-field appearance="outline">
+            <mat-label>Pizza Mania</mat-label>
+            <mat-select formControlName="pizzaMania" placeholder="Select Your PIZZA">
+            <mat-option value="Classic Margherita">Classic Margherita</mat-option>
+            <mat-option value="Chicken Tandoori">Chicken Tandoori</mat-option>
+            <mat-option value="Farm House">Farm House</mat-option>
+            <mat-option value="Cheese Burst">Cheese Burst</mat-option>
+            <mat-option value="Mushroom">Mushroom</mat-option>
+            <mat-option value="Paneer Makhani">Paneer Makhani</mat-option>
+            <mat-option value="Chicken Kheema">Chicken Kheema</mat-option>
+            <mat-option value="Pesto Besto">Pesto Besto</mat-option>
+            <mat-option value="Sweet Corn n Cheese">Sweet Corn n Cheese</mat-option>
+            <mat-option value="Chicken BBQ">Chicken BBQ</mat-option>
+        </mat-select>
+        </mat-form-field>
+       
+        <mat-form-field appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input formControlName="quantity" matInput type="number" placeholder="Please Mention the quantity of your Menu"/>
+        </mat-form-field>
+    </form>
+
+</div>
+ 
+
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" (click)="addProduct()">{{actionBtn}}</button>     
+</div>
+
+
+
+
